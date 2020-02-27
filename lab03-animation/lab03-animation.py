@@ -1,11 +1,10 @@
 import arcade
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
-SCREEN_TITLE = "Compass Rose"
 # Open the window. Set the window title and dimensions
-arcade.open_window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+
 # Set the background color
-arcade.set_background_color(arcade.color.BRONZE)
+
 # Clear screen and start render process
 
 # --- Drawing Commands Will Go Here ---
@@ -13,8 +12,7 @@ arcade.set_background_color(arcade.color.BRONZE)
 def circunferencia(x, y, radius, grosor):
     arcade.draw_circle_outline(x, y, radius, arcade.color.BLACK, grosor)
 
-circunferencia(400, 400, 330, 8)
-circunferencia(400,400,280, 18)
+
 
 def poly_negro():
     arcade.draw_polygon_filled([[400, 750],  # Vertice superior
@@ -26,27 +24,40 @@ def poly_negro():
                                 [50, 400],  # Vertice izquierdo
                                 [325, 450]],
                                arcade.color.BLACK)
-def poly_blanco():
-    arcade.draw_polygon_filled([[165, 635],
-                                [400, 450],
-                                [635, 635],
-                                [450, 400],
-                                [635, 165],
-                                [400, 350],
-                                [165, 165],
-                                [350, 400]],
+def poly_blanco(x,y):
+    arcade.draw_polygon_filled([[x-470, y],
+                                [x-235, y-185],
+                                [x, y],
+                                [x-185, y-235],
+                                [x, y-470],
+                                [x-235, y-285],
+                                [x-470, y-470],
+                                [x-285, y-235]],
                                arcade.color.WHITE)
 def on_draw(delta_time):
     arcade.start_render()
 
-    circunferencia()
+    circunferencia(400, 400, 330, 8)
+    circunferencia(400, 400, 280, 18)
+    poly_blanco(on_draw.poly_blanco1, 635) #revisar esta linea y la siguiente
+    poly_blanco(635, on_draw.poly_blanco2)
+    on_draw.poly_blanco1 += 8
+    on_draw.poly_blanco2 += 8
+    poly_negro()
 
+on_draw.poly_blanco1=635
+on_draw.poly_blanco2=635
 
+def main():
+    arcade.open_window(SCREEN_WIDTH, SCREEN_HEIGHT, "Wind Rose")
+    arcade.set_background_color(arcade.color.BRONZE)
+    arcade.schedule(on_draw, 1 / 60)
+    arcade.run()
+
+main()
 
 
 # Finish drawing and display the result
-arcade.finish_render()
+
 
 # Keep the window open until the user hits the 'close' button
-arcade.schedule(on_draw, 1/60)
-arcade.run()
