@@ -51,12 +51,34 @@ Q. Quit.""")
             camel_tiredness = 0
             milles_travelled_by_natives += AvanceNativos
         elif Letra == "E":
+            CercaniaNativos = miles_Travelled - milles_travelled_by_natives
             print("Miles travelled:", miles_Travelled)
             print("Drinks in canteen:", Drinks_available)
-            print("The natives are", miles_Travelled - milles_travelled_by_natives, "miles behind you")
+            print("The natives are", CercaniaNativos, "miles behind you")
         elif Letra == "Q":
             done = True
             print("Turning off the game")
+
+        if miles_Travelled >= 200:
+            print("You Won!")
+            
+        if thirst > 4 and thirst < 6:
+            print("You are thirsty")
+        elif thirst > 6:
+            print("You died of thirst!")
+            done = True
+
+        if camel_tiredness > 5 and camel_tiredness < 8:
+            print("Your camel is getting tired")
+        elif camel_tiredness > 8:
+            print("Your camel is dead!")
+
+        if CercaniaNativos < 15 and CercaniaNativos > 0:
+            print("The natives are getting close")
+        elif CercaniaNativos <= 0:
+            print("The natives has caught you")
+            done = True
+
 
 
 
