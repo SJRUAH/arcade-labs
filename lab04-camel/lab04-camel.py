@@ -12,12 +12,25 @@ def main():
     print("What is your choice?")
     while not done:
         print("""A. Drink from your canteen.
-                 B. Ahead moderate speed.
-                 C. Ahead full speed.
-                 D. Stop for the night.
-                 E. Status check.
-                 Q. Quit.""")
-        Letra = input()
+            B. Ahead moderate speed.
+            C. Ahead full speed.
+            D. Stop for the night.
+            E. Status check.
+            Q. Quit.""")
+        Letra =input().upper()
+        if Letra == "A":
+            pass
+        elif Letra == "B":
+            pass
+        elif Letra == "C":
+            pass
+        elif Letra == "D":
+            pass
+        elif Letra == "E":
+            pass
+        elif Letra == "Q":
+            done = True
+            print("Turning off the game")
 
 
 
