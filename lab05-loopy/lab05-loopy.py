@@ -22,8 +22,8 @@ def draw_section_1():
     BOTTOM_MARGIN = 5
     for row in range(30):
         for column in range(30):
-            x = column * COLUMN_SPACING + LEFT_MARGIN  # Instead of zero, calculate the proper x location using 'column'
-            y = row * ROW_SPACING + BOTTOM_MARGIN  # Instead of zero, calculate the proper y location using 'row'
+            x = column * COLUMN_SPACING + LEFT_MARGIN
+            y = row * ROW_SPACING + BOTTOM_MARGIN
             arcade.draw_rectangle_filled(x, y, 5, 5, arcade.color.WHITE)
 
 
@@ -65,7 +65,7 @@ def draw_section_4():
         for column in range(30):
             x = column * COLUMN_SPACING + LEFT_MARGIN
             y = row * ROW_SPACING + BOTTOM_MARGIN
-            if row %2 == 0:
+            if row % 2 == 0: #division de enteros, si es entero es true, si no false#
                 arcade.draw_rectangle_filled(x, y, 5, 5, arcade.color.BLACK)
             else:
                 if column % 2 == 0:
@@ -76,9 +76,16 @@ def draw_section_4():
 
 
 def draw_section_5():
-    # Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead.
-    pass
-
+    COLUMN_SPACING = 10
+    ROW_SPACING = 10
+    LEFT_MARGIN = 5
+    BOTTOM_MARGIN = 305
+    for row in range(30):
+        for column in range(30):
+            x = column * COLUMN_SPACING + LEFT_MARGIN
+            y = row * ROW_SPACING + BOTTOM_MARGIN
+            arcade.draw_rectangle_filled(x, y, 5, 5, arcade.color.WHITE)
+    arcade.draw_triangle_filled(1, 608, 1, 304, 304, 608, arcade.color.AIR_FORCE_BLUE)
 
 def draw_section_6():
     pass
