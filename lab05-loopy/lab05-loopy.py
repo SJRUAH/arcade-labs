@@ -88,17 +88,35 @@ def draw_section_5():
     arcade.draw_triangle_filled(1, 608, 1, 304, 304, 608, arcade.color.AIR_FORCE_BLUE)
 
 def draw_section_6():
-    pass
-
-
+    COLUMN_SPACING = 10
+    ROW_SPACING = 10
+    LEFT_MARGIN = 305
+    BOTTOM_MARGIN = 305
+    for row in range(30):
+        for column in range(0, 30 - row):
+            x = column * COLUMN_SPACING + LEFT_MARGIN
+            y = row * ROW_SPACING + BOTTOM_MARGIN
+            arcade.draw_rectangle_filled(x, y, 5, 5, arcade.color.WHITE)
 def draw_section_7():
-    pass
-
-
+    COLUMN_SPACING = 10
+    ROW_SPACING = 10
+    LEFT_MARGIN = 605
+    BOTTOM_MARGIN = 305
+    for row in range(30):
+        for column in range(row, 30):
+            x = column * COLUMN_SPACING + LEFT_MARGIN
+            y = row * ROW_SPACING + BOTTOM_MARGIN
+            arcade.draw_rectangle_filled(x, y, 5, 5, arcade.color.WHITE)
 def draw_section_8():
-    pass
-
-
+    COLUMN_SPACING = 10
+    ROW_SPACING = 10
+    LEFT_MARGIN = 905
+    BOTTOM_MARGIN = 305
+    for row in range(30):
+        for column in range(29-row, 30):
+            x = column * COLUMN_SPACING + LEFT_MARGIN
+            y = row * ROW_SPACING + BOTTOM_MARGIN
+            arcade.draw_rectangle_filled(x, y, 5, 5, arcade.color.WHITE)
 def main():
     # Create a window
     arcade.open_window(1200, 600, "Lab 05 - Loopy Lab")
