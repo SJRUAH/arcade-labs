@@ -30,6 +30,7 @@ class Ball:
             self.position_x = SCREEN_WIDTH - self.radius
             arcade.play_sound(laser_sound)
 
+
         if self.position_y < self.radius:
             self.position_y = self.radius
             arcade.play_sound(laser_sound)
