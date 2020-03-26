@@ -4,7 +4,7 @@ SCREEN_WIDTH = 660
 SCREEN_HEIGHT = 520
 SCREEN_TITLE = "Move Keyboard Example"
 MOVEMENT_SPEED = 5
-
+laser_sound = arcade.load_sound("laser.ogg")
 
 class Ball:
     def __init__(self, position_x, position_y, change_x, change_y, radius, color):
@@ -24,15 +24,19 @@ class Ball:
 
         if self.position_x < self.radius:
             self.position_x = self.radius
+            arcade.play_sound(laser_sound)
 
         if self.position_x > SCREEN_WIDTH - self.radius:
             self.position_x = SCREEN_WIDTH - self.radius
+            arcade.play_sound(laser_sound)
 
         if self.position_y < self.radius:
             self.position_y = self.radius
+            arcade.play_sound(laser_sound)
 
         if self.position_y > SCREEN_HEIGHT - self.radius:
             self.position_y = SCREEN_HEIGHT - self.radius
+            arcade.play_sound(laser_sound)
 
 
 class MyGame(arcade.Window):
